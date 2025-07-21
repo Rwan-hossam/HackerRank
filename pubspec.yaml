@@ -80,6 +80,9 @@ flutter:
     - family: ManufacturingConsent-Regular
       fonts:
         - asset: assets/ManufacturingConsent-Regular.ttf
+    - family: Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght
+      fonts:
+        - asset: assets/Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf        
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

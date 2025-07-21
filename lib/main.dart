@@ -1,5 +1,7 @@
+import 'package:final_project_hacker_rank/Views.dart/playVSPlayerView.dart';
 import 'package:final_project_hacker_rank/Views.dart/splashScreen.dart';
 import 'package:final_project_hacker_rank/viewModel/homeViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/playerVSPlayerViewModel.dart';
 import 'package:final_project_hacker_rank/viewModel/splashViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
           providers: [
             ChangeNotifierProvider(create: (_) => Splashviewmodel()),
             ChangeNotifierProvider(create: (_) => Homeviewmodel()),
+            ChangeNotifierProvider(create: (_) => PlayerVsPlayerViewModel()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
             routes: {
               '/splash': (context) => const Splashscreen(),
               // '/': (context) => const OnboardingView(),
-              // '/friendGame': (context) => Playvsfriendview(),
+              '/friendGame': (context) => PlayerVsPlayerView(),
               // '/computerGame': (context) => Playvscomputerview(),
             },
           ),
