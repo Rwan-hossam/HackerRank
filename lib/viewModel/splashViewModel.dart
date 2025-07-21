@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:final_project_hacker_rank/Views.dart/onBoardingView.dart';
+import 'package:final_project_hacker_rank/Views.dart/homeView.dart';
 import 'package:flutter/material.dart';
 
 class Splashviewmodel extends ChangeNotifier {

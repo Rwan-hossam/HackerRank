@@ -1,8 +1,5 @@
-import 'package:final_project_hacker_rank/Views.dart/onBoardingView.dart';
-import 'package:final_project_hacker_rank/Views.dart/playVSComputerView.dart';
-import 'package:final_project_hacker_rank/Views.dart/playVSFriendView.dart';
 import 'package:final_project_hacker_rank/Views.dart/splashScreen.dart';
-import 'package:final_project_hacker_rank/viewModel/onBoardingViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/homeViewModel.dart';
 import 'package:final_project_hacker_rank/viewModel/splashViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,17 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(
-        375,
-        812,
-      ), // مقاس شاشة التصميم (ممكن يتغير حسب تصميمك)
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
         return MultiProvider(
           providers: [
             ChangeNotifierProvider(create: (_) => Splashviewmodel()),
-            ChangeNotifierProvider(create: (_) => OnboardingviewModel()),
+            ChangeNotifierProvider(create: (_) => Homeviewmodel()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

@@ -1,5 +1,5 @@
 // onboarding_view.dart
-import 'package:final_project_hacker_rank/viewModel/onBoardingViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/homeViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +8,7 @@ class OnboardingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = Provider.of<OnboardingviewModel>(context);
+    final viewModel = Provider.of<Homeviewmodel>(context);
 
     return Scaffold(
       body: Container(
