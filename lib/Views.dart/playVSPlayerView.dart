@@ -2,9 +2,14 @@ import 'package:final_project_hacker_rank/viewModel/playerVSPlayerViewModel.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class PlayerVsPlayerView extends StatelessWidget {
+class PlayerVsPlayerView extends StatefulWidget {
   const PlayerVsPlayerView({super.key});
 
+  @override
+  State<PlayerVsPlayerView> createState() => _PlayerVsPlayerViewState();
+}
+
+class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
   @override
   Widget build(BuildContext context) {
     final viewModel = Provider.of<PlayerVsPlayerViewModel>(context);
