@@ -4,6 +4,8 @@ class PlayerVsPlayerViewModel extends ChangeNotifier {
   List<String> board = List.filled(9, '');
   String currentPlayer = 'X';
   String winner = '';
+  int counter1 = 0;
+  int counter2 = 0;
 
   void playMove(int index) {
     if (board[index] == '' && winner == '') {
@@ -32,6 +34,7 @@ class PlayerVsPlayerViewModel extends ChangeNotifier {
       final a = combo[0], b = combo[1], c = combo[2];
       if (board[a] != '' && board[a] == board[b] && board[b] == board[c]) {
         winner = board[a];
+        incrementCounter();
         return;
       }
     }
@@ -46,6 +49,23 @@ class PlayerVsPlayerViewModel extends ChangeNotifier {
     board = List.filled(9, '');
     currentPlayer = 'X';
     winner = '';
+    counter1 = 0;
+    counter2 = 0;
     notifyListeners();
+  }
+
+  void NextGame() {
+    board = List.filled(9, '');
+    currentPlayer = 'X';
+    winner = '';
+    notifyListeners();
+  }
+
+  void incrementCounter() {
+    if (winner == 'X') {
+      counter1++;
+    } else if (winner == 'O') {
+      counter2++;
+    }
   }
 }

@@ -68,7 +68,7 @@ class PlayerVsPlayerView extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '1',
+                        '${viewModel.counter1}',
                         style: TextStyle(
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
@@ -115,7 +115,7 @@ class PlayerVsPlayerView extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '1',
+                        '${viewModel.counter2}',
                         style: TextStyle(
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
@@ -138,7 +138,7 @@ class PlayerVsPlayerView extends StatelessWidget {
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 15),
           GridView.builder(
             shrinkWrap: true,
             itemCount: 9,
@@ -171,6 +171,27 @@ class PlayerVsPlayerView extends StatelessWidget {
                 ),
               );
             },
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: ElevatedButton(
+              onPressed: () {
+                viewModel.NextGame();
+              },
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(
+                  const Color.fromARGB(255, 78, 126, 8),
+                ),
+              ),
+              child: Text(
+                'Next Round',
+                style: TextStyle(
+                  fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
+                  color: Colors.black,
+                  fontSize: 18,
+                ),
+              ),
+            ),
           ),
         ],
       ),
