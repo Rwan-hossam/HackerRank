@@ -34,70 +34,52 @@ class Playvscomputerviewmodel extends ChangeNotifier {
       [2, 4, 6],
     ];
 
-    // 1. Try to win
+    int? winningMove;
+    int? blockingMove;
+
+    // 1. Scan for winning move
     for (var pattern in winPatterns) {
       String a = board[pattern[0]];
       String b = board[pattern[1]];
       String c = board[pattern[2]];
-      if (a == b && a == 'O' && board[pattern[2]] == '') {
-        board[pattern[2]] = 'O';
-        currentPlayer = 'X';
-        checkWinner();
-        notifyListeners();
-        return;
-      }
-      if (a == c && a == 'O' && board[pattern[1]] == '') {
-        board[pattern[1]] = 'O';
-        currentPlayer = 'X';
-        checkWinner();
-        notifyListeners();
-        return;
-      }
-      if (b == c && b == 'O' && board[pattern[0]] == '') {
-        board[pattern[0]] = 'O';
-        currentPlayer = 'X';
-        checkWinner();
-        notifyListeners();
-        return;
-      }
+
+      if (a == b && a == 'O' && board[pattern[2]] == '')
+        winningMove = pattern[2];
+      if (a == c && a == 'O' && board[pattern[1]] == '')
+        winningMove = pattern[1];
+      if (b == c && b == 'O' && board[pattern[0]] == '')
+        winningMove = pattern[0];
     }
 
-    // 2. Try to block X
+    // 2. Scan for blocking move
     for (var pattern in winPatterns) {
       String a = board[pattern[0]];
       String b = board[pattern[1]];
       String c = board[pattern[2]];
-      if (a == b && a == 'X' && board[pattern[2]] == '') {
-        board[pattern[2]] = 'O';
-        currentPlayer = 'X';
-        checkWinner();
-        notifyListeners();
-        return;
-      }
-      if (a == c && a == 'X' && board[pattern[1]] == '') {
-        board[pattern[1]] = 'O';
-        currentPlayer = 'X';
-        checkWinner();
-        notifyListeners();
-        return;
-      }
-      if (b == c && b == 'X' && board[pattern[0]] == '') {
-        board[pattern[0]] = 'O';
-        currentPlayer = 'X';
-        checkWinner();
-        notifyListeners();
-        return;
-      }
+
+      if (a == b && a == 'X' && board[pattern[2]] == '')
+        blockingMove = pattern[2];
+      if (a == c && a == 'X' && board[pattern[1]] == '')
+        blockingMove = pattern[1];
+      if (b == c && b == 'X' && board[pattern[0]] == '')
+        blockingMove = pattern[0];
     }
 
-    // 3. Play random
-    List<int> emptyIndices = [];
-    for (int i = 0; i < board.length; i++) {
-      if (board[i] == '') emptyIndices.add(i);
-    }
-    emptyIndices.shuffle();
-    if (emptyIndices.isNotEmpty) {
-      board[emptyIndices.first] = 'O';
+    // 3. Make a move
+    if (winningMove != null) {
+      board[winningMove] = 'O';
+    } else if (blockingMove != null) {
+      board[blockingMove] = 'O';
+    } else {
+      // 4. Play random
+      List<int> emptyIndices = [];
+      for (int i = 0; i < board.length; i++) {
+        if (board[i] == '') emptyIndices.add(i);
+      }
+      emptyIndices.shuffle();
+      if (emptyIndices.isNotEmpty) {
+        board[emptyIndices.first] = 'O';
+      }
     }
 
     currentPlayer = 'X';
