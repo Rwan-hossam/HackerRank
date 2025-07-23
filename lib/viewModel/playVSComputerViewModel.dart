@@ -37,7 +37,7 @@ class Playvscomputerviewmodel extends ChangeNotifier {
     int? winningMove;
     int? blockingMove;
 
-    // 1. Scan for winning move
+    // 1  winning move
     for (var pattern in winPatterns) {
       String a = board[pattern[0]];
       String b = board[pattern[1]];
@@ -51,7 +51,7 @@ class Playvscomputerviewmodel extends ChangeNotifier {
         winningMove = pattern[0];
     }
 
-    // 2. Scan for blocking move
+    // 2 blocking move
     for (var pattern in winPatterns) {
       String a = board[pattern[0]];
       String b = board[pattern[1]];
@@ -65,7 +65,7 @@ class Playvscomputerviewmodel extends ChangeNotifier {
         blockingMove = pattern[0];
     }
 
-    // 3. Make a move
+    // 3 Make a move
     if (winningMove != null) {
       board[winningMove] = 'O';
     } else if (blockingMove != null) {
