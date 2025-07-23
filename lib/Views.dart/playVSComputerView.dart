@@ -50,7 +50,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 15, 74, 116),
+                        const Color.fromARGB(255, 11, 76, 142),
                         Color.fromARGB(255, 10, 100, 127),
                         Color.fromARGB(255, 7, 44, 112),
                       ],
@@ -100,7 +100,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 15, 74, 116),
+                        const Color.fromARGB(255, 11, 76, 142),
                         Color.fromARGB(255, 10, 100, 127),
                         Color.fromARGB(255, 7, 44, 112),
                       ],
