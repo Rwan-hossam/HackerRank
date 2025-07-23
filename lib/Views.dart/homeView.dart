@@ -3,8 +3,8 @@ import 'package:final_project_hacker_rank/viewModel/homeViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class OnboardingView extends StatelessWidget {
-  const OnboardingView({super.key});
+class Homeview extends StatelessWidget {
+  const Homeview({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,9 @@ class OnboardingView extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color.fromARGB(255, 30, 125, 19),
-              Color.fromARGB(255, 7, 88, 10),
-              Color.fromARGB(255, 5, 73, 5),
+              Color.fromARGB(255, 15, 74, 116),
+              Color.fromARGB(255, 10, 100, 127),
+              Color.fromARGB(255, 7, 44, 112),
             ],
           ),
         ),
@@ -31,14 +31,14 @@ class OnboardingView extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'ManufacturingConsent-Regular',
                 fontSize: 80,
-                color: Color.fromARGB(255, 7, 24, 1),
+                color: Color.fromARGB(255, 255, 255, 255),
               ),
             ),
             const Text(
               'TIC TAC TOE',
               style: TextStyle(
                 fontSize: 40,
-                color: Color.fromARGB(255, 7, 24, 1),
+                color: Color.fromARGB(255, 248, 249, 247),
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -46,7 +46,7 @@ class OnboardingView extends StatelessWidget {
               padding: EdgeInsets.all(20),
               child: CircleAvatar(
                 radius: 100,
-                backgroundImage: AssetImage('assets/tic.jpg'),
+                backgroundImage: AssetImage('assets/icon.jpg'),
               ),
             ),
             Padding(
@@ -55,11 +55,14 @@ class OnboardingView extends StatelessWidget {
                 onPressed: () => viewModel.goToFriendGame(context),
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(300, 50),
-                  backgroundColor: const Color.fromARGB(255, 16, 74, 4),
+                  backgroundColor: const Color.fromARGB(255, 14, 108, 159),
                 ),
                 child: const Text(
                   'Play VS Friend',
-                  style: TextStyle(fontSize: 30, color: Colors.black),
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color.fromARGB(255, 247, 242, 242),
+                  ),
                 ),
               ),
             ),
@@ -69,11 +72,14 @@ class OnboardingView extends StatelessWidget {
                 onPressed: () => viewModel.goToComputerGame(context),
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(300, 50),
-                  backgroundColor: const Color.fromARGB(255, 16, 74, 4),
+                  backgroundColor: const Color.fromARGB(255, 14, 108, 159),
                 ),
                 child: const Text(
                   'Play VS Computer',
-                  style: TextStyle(fontSize: 30, color: Colors.black),
+                  style: TextStyle(
+                    fontSize: 30,
+                    color: Color.fromARGB(255, 244, 237, 237),
+                  ),
                 ),
               ),
             ),

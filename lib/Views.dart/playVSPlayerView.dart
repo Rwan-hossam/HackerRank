@@ -16,17 +16,20 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
 
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         title: const Text(
           ' VS Friend ',
           style: TextStyle(
             fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
             fontSize: 40,
+            color: Color.fromARGB(255, 244, 241, 241),
           ),
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 68, 142, 11),
+        backgroundColor: const Color.fromARGB(255, 11, 76, 142),
         actions: [
           IconButton(
+            color: const Color.fromARGB(255, 244, 242, 242),
             icon: Icon(Icons.restart_alt),
             onPressed: () {
               viewModel.resetGame();
@@ -46,9 +49,9 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 37, 152, 24),
-                        Color.fromARGB(255, 9, 132, 14),
-                        Color.fromARGB(255, 6, 98, 6),
+                        Color.fromARGB(255, 15, 74, 116),
+                        Color.fromARGB(255, 10, 100, 127),
+                        Color.fromARGB(255, 7, 44, 112),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(20),
@@ -62,6 +65,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 40,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -70,6 +74,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 20,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -78,6 +83,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 30,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                     ],
@@ -93,9 +99,9 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 37, 152, 24),
-                        Color.fromARGB(255, 9, 132, 14),
-                        Color.fromARGB(255, 6, 98, 6),
+                        Color.fromARGB(255, 15, 74, 116),
+                        Color.fromARGB(255, 10, 100, 127),
+                        Color.fromARGB(255, 7, 44, 112),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(20),
@@ -109,6 +115,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 40,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -117,6 +124,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 20,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -125,6 +133,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 30,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                     ],
@@ -158,7 +167,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                 onTap: () => viewModel.playMove(index),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 10, 127, 14),
+                    color: const Color.fromARGB(255, 11, 76, 142),
                     border: Border.all(
                       color: const Color.fromARGB(255, 10, 17, 10),
                     ),
@@ -170,6 +179,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                       style: const TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 248, 246, 246),
                       ),
                     ),
                   ),
@@ -185,14 +195,14 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
               },
               style: ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(
-                  const Color.fromARGB(255, 78, 126, 8),
+                  const Color.fromARGB(255, 11, 76, 142),
                 ),
               ),
               child: Text(
                 'Next Round',
                 style: TextStyle(
                   fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
-                  color: Colors.black,
+                  color: const Color.fromARGB(255, 245, 244, 244),
                   fontSize: 18,
                 ),
               ),

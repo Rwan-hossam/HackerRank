@@ -15,18 +15,23 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
     final viewModel2 = Provider.of<Playvscomputerviewmodel>(context);
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: const Color.fromARGB(255, 244, 243, 243),
+        ),
         title: const Text(
           ' VS Computer ',
           style: TextStyle(
             fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
             fontSize: 30,
+            color: Color.fromARGB(255, 244, 241, 241),
           ),
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 68, 142, 11),
+        backgroundColor: const Color.fromARGB(255, 11, 76, 142),
         actions: [
           IconButton(
-            icon: Icon(Icons.restart_alt),
+            color: const Color.fromARGB(255, 246, 244, 244),
+            icon: Icon(Icons.restart_alt_sharp),
             onPressed: () {
               viewModel2.resetGame();
             },
@@ -45,9 +50,9 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 37, 152, 24),
-                        Color.fromARGB(255, 9, 132, 14),
-                        Color.fromARGB(255, 6, 98, 6),
+                        Color.fromARGB(255, 15, 74, 116),
+                        Color.fromARGB(255, 10, 100, 127),
+                        Color.fromARGB(255, 7, 44, 112),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(20),
@@ -61,6 +66,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 40,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -69,6 +75,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 20,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -77,6 +84,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 30,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                     ],
@@ -92,9 +100,9 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromARGB(255, 37, 152, 24),
-                        Color.fromARGB(255, 9, 132, 14),
-                        Color.fromARGB(255, 6, 98, 6),
+                        Color.fromARGB(255, 15, 74, 116),
+                        Color.fromARGB(255, 10, 100, 127),
+                        Color.fromARGB(255, 7, 44, 112),
                       ],
                     ),
                     borderRadius: BorderRadius.circular(20),
@@ -108,6 +116,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 40,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -116,6 +125,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 20,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                       Text(
@@ -124,6 +134,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
                           fontSize: 30,
+                          color: Color.fromARGB(255, 244, 241, 241),
                         ),
                       ),
                     ],
@@ -157,7 +168,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                 onTap: () => viewModel2.playMove(index),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 10, 127, 14),
+                    color: const Color.fromARGB(255, 11, 76, 142),
                     border: Border.all(
                       color: const Color.fromARGB(255, 10, 17, 10),
                     ),
@@ -169,6 +180,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                       style: const TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 243, 239, 239),
                       ),
                     ),
                   ),
@@ -184,14 +196,14 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
               },
               style: ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(
-                  const Color.fromARGB(255, 78, 126, 8),
+                  const Color.fromARGB(255, 11, 76, 142),
                 ),
               ),
               child: Text(
                 'Next Round',
                 style: TextStyle(
                   fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
-                  color: Colors.black,
+                  color: const Color.fromARGB(255, 247, 244, 244),
                   fontSize: 18,
                 ),
               ),

@@ -1,7 +1,10 @@
+import 'package:final_project_hacker_rank/Views.dart/sign_up_view.dart';
 import 'package:final_project_hacker_rank/Views.dart/splashScreen.dart';
 import 'package:final_project_hacker_rank/viewModel/homeViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/login_view_model.dart';
 import 'package:final_project_hacker_rank/viewModel/playVSComputerViewModel.dart';
 import 'package:final_project_hacker_rank/viewModel/playerVSPlayerViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/sign_up_view_model.dart';
 import 'package:final_project_hacker_rank/viewModel/splashViewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,18 +29,14 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(create: (_) => Splashviewmodel()),
             ChangeNotifierProvider(create: (_) => Homeviewmodel()),
             ChangeNotifierProvider(create: (_) => PlayerVsPlayerViewModel()),
+            ChangeNotifierProvider(create: (_) => LoginViewModel()),
+            ChangeNotifierProvider(create: (_) => SignUpViewModel()),
             ChangeNotifierProvider(create: (_) => Playvscomputerviewmodel()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'XO Game',
-            initialRoute: '/splash',
-            routes: {
-              '/splash': (context) => const Splashscreen(),
-              // '/': (context) => const OnboardingView(),
-              // '/friendGame': (context) => PlayerVsPlayerView(),
-              // '/computerGame': (context) => Playvscomputerview(),
-            },
+            home: Splashscreen(),
           ),
         );
       },
