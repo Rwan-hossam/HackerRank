@@ -1,11 +1,11 @@
 import 'package:final_project_hacker_rank/Views.dart/sign_up_view.dart';
-import 'package:final_project_hacker_rank/Views.dart/splashScreen.dart';
-import 'package:final_project_hacker_rank/viewModel/homeViewModel.dart';
+import 'package:final_project_hacker_rank/Views.dart/splash_screen.dart';
+import 'package:final_project_hacker_rank/viewModel/home_View_Model.dart';
 import 'package:final_project_hacker_rank/viewModel/login_view_model.dart';
-import 'package:final_project_hacker_rank/viewModel/playVSComputerViewModel.dart';
-import 'package:final_project_hacker_rank/viewModel/playerVSPlayerViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/playVSComputer_view_model.dart';
+import 'package:final_project_hacker_rank/viewModel/playerVSPlayer_view_model.dart';
 import 'package:final_project_hacker_rank/viewModel/sign_up_view_model.dart';
-import 'package:final_project_hacker_rank/viewModel/splashViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/splash_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,17 +26,17 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MultiProvider(
           providers: [
-            ChangeNotifierProvider(create: (_) => Splashviewmodel()),
-            ChangeNotifierProvider(create: (_) => Homeviewmodel()),
+            ChangeNotifierProvider(create: (_) => SplashViewModel()),
+            ChangeNotifierProvider(create: (_) => HomeViewModel()),
             ChangeNotifierProvider(create: (_) => PlayerVsPlayerViewModel()),
             ChangeNotifierProvider(create: (_) => LoginViewModel()),
             ChangeNotifierProvider(create: (_) => SignUpViewModel()),
-            ChangeNotifierProvider(create: (_) => Playvscomputerviewmodel()),
+            ChangeNotifierProvider(create: (_) => PlayVsComputerViewModel()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'XO Game',
-            home: Splashscreen(),
+            home: SplashScreen(),
           ),
         );
       },

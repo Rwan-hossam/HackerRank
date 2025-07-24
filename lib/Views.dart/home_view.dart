@@ -1,14 +1,19 @@
 // onboarding_view.dart
-import 'package:final_project_hacker_rank/viewModel/homeViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/home_View_Model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Homeview extends StatelessWidget {
-  const Homeview({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
   @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  @override
   Widget build(BuildContext context) {
-    final viewModel = Provider.of<Homeviewmodel>(context);
+    final viewModel = Provider.of<HomeViewModel>(context);
 
     return Scaffold(
       body: Container(

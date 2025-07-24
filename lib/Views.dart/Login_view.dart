@@ -1,18 +1,18 @@
-import 'package:final_project_hacker_rank/Views.dart/homeView.dart';
+import 'package:final_project_hacker_rank/Views.dart/home_view.dart';
 import 'package:final_project_hacker_rank/Views.dart/sign_up_view.dart';
 import 'package:final_project_hacker_rank/viewModel/sign_up_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project_hacker_rank/viewModel/login_view_model.dart';
 import 'package:provider/provider.dart';
 
-class Login_view extends StatefulWidget {
-  const Login_view({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<Login_view> createState() => _Login_viewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _Login_viewState extends State<Login_view> {
+class _LoginViewState extends State<LoginView> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -31,7 +31,7 @@ class _Login_viewState extends State<Login_view> {
       if (viewModel.isLoggedIn) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => const Homeview()),
+          MaterialPageRoute(builder: (_) => const HomeView()),
         );
       } else if (viewModel.errorMessage != null) {
         ScaffoldMessenger.of(context).showSnackBar(

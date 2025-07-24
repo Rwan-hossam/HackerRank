@@ -1,28 +1,27 @@
-import 'package:final_project_hacker_rank/viewModel/playVSComputerViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/playerVSPlayer_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Playvscomputerview extends StatefulWidget {
-  Playvscomputerview({super.key});
+class PlayerVsPlayerView extends StatefulWidget {
+  const PlayerVsPlayerView({super.key});
 
   @override
-  State<Playvscomputerview> createState() => _PlayvscomputerviewState();
+  State<PlayerVsPlayerView> createState() => _PlayerVsPlayerViewState();
 }
 
-class _PlayvscomputerviewState extends State<Playvscomputerview> {
+class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
   @override
   Widget build(BuildContext context) {
-    final viewModel2 = Provider.of<Playvscomputerviewmodel>(context);
+    final viewModel = Provider.of<PlayerVsPlayerViewModel>(context);
+
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: const Color.fromARGB(255, 244, 243, 243),
-        ),
+        iconTheme: IconThemeData(color: Colors.white),
         title: const Text(
-          ' VS Computer ',
+          ' VS Friend ',
           style: TextStyle(
             fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
-            fontSize: 30,
+            fontSize: 40,
             color: Color.fromARGB(255, 244, 241, 241),
           ),
         ),
@@ -30,10 +29,10 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
         backgroundColor: const Color.fromARGB(255, 11, 76, 142),
         actions: [
           IconButton(
-            color: const Color.fromARGB(255, 246, 244, 244),
-            icon: Icon(Icons.restart_alt_sharp),
+            color: const Color.fromARGB(255, 244, 242, 242),
+            icon: Icon(Icons.restart_alt),
             onPressed: () {
-              viewModel2.resetGame();
+              viewModel.resetGame();
             },
           ),
         ],
@@ -79,7 +78,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                         ),
                       ),
                       Text(
-                        '${viewModel2.counter1}',
+                        '${viewModel.counter1}',
                         style: TextStyle(
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
@@ -129,7 +128,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                         ),
                       ),
                       Text(
-                        '${viewModel2.counter2}',
+                        '${viewModel.counter2}',
                         style: TextStyle(
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
@@ -145,11 +144,11 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
           ),
           Center(
             child: Text(
-              viewModel2.winner == ''
-                  ? 'Turn: ${viewModel2.currentPlayer}'
-                  : viewModel2.winner == 'Draw'
+              viewModel.winner == ''
+                  ? 'Turn: ${viewModel.currentPlayer}'
+                  : viewModel.winner == 'Draw'
                   ? 'It\'s a Draw!'
-                  : 'Winner: ${viewModel2.winner}',
+                  : 'Winner: ${viewModel.winner}',
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
@@ -165,7 +164,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
             padding: const EdgeInsets.all(10),
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () => viewModel2.playMove(index),
+                onTap: () => viewModel.playMove(index),
                 child: Container(
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 11, 76, 142),
@@ -176,11 +175,11 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                   ),
                   child: Center(
                     child: Text(
-                      viewModel2.board[index],
+                      viewModel.board[index],
                       style: const TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 243, 239, 239),
+                        color: Color.fromARGB(255, 248, 246, 246),
                       ),
                     ),
                   ),
@@ -192,7 +191,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
             alignment: Alignment.center,
             child: ElevatedButton(
               onPressed: () {
-                viewModel2.NextGame();
+                viewModel.NextGame();
               },
               style: ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(
@@ -203,7 +202,7 @@ class _PlayvscomputerviewState extends State<Playvscomputerview> {
                 'Next Round',
                 style: TextStyle(
                   fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
-                  color: const Color.fromARGB(255, 247, 244, 244),
+                  color: const Color.fromARGB(255, 245, 244, 244),
                   fontSize: 18,
                 ),
               ),

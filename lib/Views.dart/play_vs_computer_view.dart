@@ -1,27 +1,28 @@
-import 'package:final_project_hacker_rank/viewModel/playerVSPlayerViewModel.dart';
+import 'package:final_project_hacker_rank/viewModel/playVSComputer_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class PlayerVsPlayerView extends StatefulWidget {
-  const PlayerVsPlayerView({super.key});
+class PlayVsComputerView extends StatefulWidget {
+  PlayVsComputerView({super.key});
 
   @override
-  State<PlayerVsPlayerView> createState() => _PlayerVsPlayerViewState();
+  State<PlayVsComputerView> createState() => _PlayVsComputerViewState();
 }
 
-class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
+class _PlayVsComputerViewState extends State<PlayVsComputerView> {
   @override
   Widget build(BuildContext context) {
-    final viewModel = Provider.of<PlayerVsPlayerViewModel>(context);
-
+    final viewModel2 = Provider.of<PlayVsComputerViewModel>(context);
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(
+          color: const Color.fromARGB(255, 244, 243, 243),
+        ),
         title: const Text(
-          ' VS Friend ',
+          ' VS Computer ',
           style: TextStyle(
             fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
-            fontSize: 40,
+            fontSize: 30,
             color: Color.fromARGB(255, 244, 241, 241),
           ),
         ),
@@ -29,10 +30,10 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
         backgroundColor: const Color.fromARGB(255, 11, 76, 142),
         actions: [
           IconButton(
-            color: const Color.fromARGB(255, 244, 242, 242),
-            icon: Icon(Icons.restart_alt),
+            color: const Color.fromARGB(255, 246, 244, 244),
+            icon: Icon(Icons.restart_alt_sharp),
             onPressed: () {
-              viewModel.resetGame();
+              viewModel2.resetGame();
             },
           ),
         ],
@@ -78,7 +79,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                         ),
                       ),
                       Text(
-                        '${viewModel.counter1}',
+                        '${viewModel2.counter1}',
                         style: TextStyle(
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
@@ -128,7 +129,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                         ),
                       ),
                       Text(
-                        '${viewModel.counter2}',
+                        '${viewModel2.counter2}',
                         style: TextStyle(
                           fontFamily:
                               'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
@@ -144,11 +145,11 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
           ),
           Center(
             child: Text(
-              viewModel.winner == ''
-                  ? 'Turn: ${viewModel.currentPlayer}'
-                  : viewModel.winner == 'Draw'
+              viewModel2.winner == ''
+                  ? 'Turn: ${viewModel2.currentPlayer}'
+                  : viewModel2.winner == 'Draw'
                   ? 'It\'s a Draw!'
-                  : 'Winner: ${viewModel.winner}',
+                  : 'Winner: ${viewModel2.winner}',
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
@@ -164,7 +165,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
             padding: const EdgeInsets.all(10),
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () => viewModel.playMove(index),
+                onTap: () => viewModel2.playMove(index),
                 child: Container(
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 11, 76, 142),
@@ -175,11 +176,11 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                   ),
                   child: Center(
                     child: Text(
-                      viewModel.board[index],
+                      viewModel2.board[index],
                       style: const TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 248, 246, 246),
+                        color: Color.fromARGB(255, 243, 239, 239),
                       ),
                     ),
                   ),
@@ -191,7 +192,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
             alignment: Alignment.center,
             child: ElevatedButton(
               onPressed: () {
-                viewModel.NextGame();
+                viewModel2.NextGame();
               },
               style: ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(
@@ -202,7 +203,7 @@ class _PlayerVsPlayerViewState extends State<PlayerVsPlayerView> {
                 'Next Round',
                 style: TextStyle(
                   fontFamily: 'Bitcount-VariableFont_CRSV,ELSH,ELXP,slnt,wght',
-                  color: const Color.fromARGB(255, 245, 244, 244),
+                  color: const Color.fromARGB(255, 247, 244, 244),
                   fontSize: 18,
                 ),
               ),

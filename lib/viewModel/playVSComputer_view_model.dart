@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class Playvscomputerviewmodel extends ChangeNotifier {
+class PlayVsComputerViewModel extends ChangeNotifier {
   List<String> board = List.filled(9, '');
   String currentPlayer = 'X';
   String winner = '';

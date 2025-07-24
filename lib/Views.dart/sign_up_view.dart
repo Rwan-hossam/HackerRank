@@ -1,11 +1,20 @@
-import 'package:final_project_hacker_rank/Views.dart/homeView.dart';
+import 'package:final_project_hacker_rank/Views.dart/home_view.dart';
 import 'package:final_project_hacker_rank/viewModel/sign_up_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SignUpView extends StatelessWidget {
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
+
+  @override
+  State<SignUpView> createState() => _SignUpViewState();
+}
+
+class _SignUpViewState extends State<SignUpView> {
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
+
   final TextEditingController usernameController = TextEditingController();
 
   @override
@@ -18,7 +27,7 @@ class SignUpView extends StatelessWidget {
             if (viewModel.isRegistered) {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (_) => const Homeview()),
+                MaterialPageRoute(builder: (_) => const HomeView()),
               );
             }
           });
